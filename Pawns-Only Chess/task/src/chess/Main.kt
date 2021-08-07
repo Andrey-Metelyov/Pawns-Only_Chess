@@ -14,7 +14,9 @@ fun main() {
         if (input == "exit") {
             break
         }
-        game.move(input)
+        if (game.move(input)) {
+            game.showBoard()
+        }
     }
     println("Bye!")
 }
