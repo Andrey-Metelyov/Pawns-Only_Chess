@@ -1,6 +1,6 @@
 package chess
 
-class PawnsChessGame(val playerOne: String, val playerTwo: String) {
+class PawnsChessGame(private val playerOne: String, private val playerTwo: String) {
     private val grid = arrayOf(
         "        ".toCharArray(),
         "BBBBBBBB".toCharArray(),
