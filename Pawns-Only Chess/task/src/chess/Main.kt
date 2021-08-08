@@ -14,8 +14,23 @@ fun main() {
         if (input == "exit") {
             break
         }
-        if (game.move(input)) {
+        val res = game.move(input)
+        if (res != PawnsChessGame.MoveResult.INVALID) {
             game.showBoard()
+            when (res) {
+                PawnsChessGame.MoveResult.WHITE_WINS -> {
+                    println("White Wins!")
+                    break;
+                }
+                PawnsChessGame.MoveResult.BLACK_WINS -> {
+                    println("Black Wins!")
+                    break;
+                }
+                PawnsChessGame.MoveResult.STALEMATE -> {
+                    println("Stalemate!")
+                    break;
+                }
+            }
         }
     }
     println("Bye!")
